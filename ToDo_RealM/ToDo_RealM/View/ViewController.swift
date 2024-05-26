@@ -26,11 +26,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    
+//    Configure First Screen (Table view)
+    
     func configuration() -> Void {
         self.tblView.register(UINib.init(nibName: "ToDoItem", bundle: nil), forCellReuseIdentifier: "todoItem")
         self.viewModel.getAllPerson()
+        self.tblView.tableFooterView = UIView()
         self.tblView.reloadData()
     }
+    
+//    Method called when any operation occur on database level.
     
     func updateOnAction() -> Void {
         self.viewModel.event = { (event) in

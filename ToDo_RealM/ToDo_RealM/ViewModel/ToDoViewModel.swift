@@ -24,19 +24,25 @@ class ToDoViewModel {
         listPerson = DatabaseHelper.shared.getAllDetails()
     }
     
+//    Method to add person
+    
     func add(person : Person) -> Void {
         listPerson.append(person)
         DatabaseHelper.shared.add(person: person)
         self.event?(.add)
     }
+
+//    Method to remove person
     
     func delete(person : Person) -> Void {
         let index = listPerson.firstIndex(of: person)
         
-        listPerson.remove(at: index!)        
+        listPerson.remove(at: index!)
         DatabaseHelper.shared.delete(index: index!)
         self.event?(.delete)
     }
+    
+//    Method to update person
     
     func edit(person: Person, index : Int) -> Void {
         listPerson[index] = person

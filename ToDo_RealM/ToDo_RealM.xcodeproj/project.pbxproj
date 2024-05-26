@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,12 @@
 		414686C62C01A425005EFF3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414686C42C01A425005EFF3E /* Main.storyboard */; };
 		414686C82C01A428005EFF3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 414686C72C01A428005EFF3E /* Assets.xcassets */; };
 		414686CB2C01A428005EFF3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 414686C92C01A428005EFF3E /* LaunchScreen.storyboard */; };
+		414686D42C01AD50005EFF3E /* ToDoItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 414686D32C01AD50005EFF3E /* ToDoItem.xib */; };
+		414686D72C01ADFD005EFF3E /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414686D62C01ADFD005EFF3E /* ToDoItem.swift */; };
+		41EB65F22C01B8D000CC7F0F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB65F12C01B8D000CC7F0F /* Person.swift */; };
+		41EB65F52C01B91E00CC7F0F /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB65F42C01B91E00CC7F0F /* ToDoViewModel.swift */; };
+		41EB65FD2C01E72000CC7F0F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 41EB65FC2C01E72000CC7F0F /* RealmSwift */; };
+		41EB66002C01E84D00CC7F0F /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB65FF2C01E84D00CC7F0F /* DatabaseHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,11 @@
 		414686C72C01A428005EFF3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		414686CA2C01A428005EFF3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		414686CC2C01A428005EFF3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		414686D32C01AD50005EFF3E /* ToDoItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoItem.xib; sourceTree = "<group>"; };
+		414686D62C01ADFD005EFF3E /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		41EB65F12C01B8D000CC7F0F /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		41EB65F42C01B91E00CC7F0F /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
+		41EB65FF2C01E84D00CC7F0F /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EB65FD2C01E72000CC7F0F /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +68,44 @@
 		414686BD2C01A425005EFF3E /* ToDo_RealM */ = {
 			isa = PBXGroup;
 			children = (
+				41EB65F92C01E3B200CC7F0F /* ViewModel */,
+				41EB65F82C01E3AA00CC7F0F /* Model */,
+				41EB65F72C01E3A300CC7F0F /* View */,
 				414686BE2C01A425005EFF3E /* AppDelegate.swift */,
 				414686C02C01A425005EFF3E /* SceneDelegate.swift */,
-				414686C22C01A425005EFF3E /* ViewController.swift */,
 				414686C42C01A425005EFF3E /* Main.storyboard */,
 				414686C72C01A428005EFF3E /* Assets.xcassets */,
 				414686C92C01A428005EFF3E /* LaunchScreen.storyboard */,
 				414686CC2C01A428005EFF3E /* Info.plist */,
 			);
 			path = ToDo_RealM;
+			sourceTree = "<group>";
+		};
+		41EB65F72C01E3A300CC7F0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				414686D32C01AD50005EFF3E /* ToDoItem.xib */,
+				414686D62C01ADFD005EFF3E /* ToDoItem.swift */,
+				414686C22C01A425005EFF3E /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		41EB65F82C01E3AA00CC7F0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41EB65F12C01B8D000CC7F0F /* Person.swift */,
+				41EB65FF2C01E84D00CC7F0F /* DatabaseHelper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41EB65F92C01E3B200CC7F0F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				41EB65F42C01B91E00CC7F0F /* ToDoViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +124,9 @@
 			dependencies = (
 			);
 			name = ToDo_RealM;
+			packageProductDependencies = (
+				41EB65FC2C01E72000CC7F0F /* RealmSwift */,
+			);
 			productName = ToDo_RealM;
 			productReference = 414686BB2C01A425005EFF3E /* ToDo_RealM.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 414686B22C01A425005EFF3E;
+			packageReferences = (
+				41EB65FB2C01E72000CC7F0F /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 414686BC2C01A425005EFF3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +173,7 @@
 			files = (
 				414686CB2C01A428005EFF3E /* LaunchScreen.storyboard in Resources */,
 				414686C82C01A428005EFF3E /* Assets.xcassets in Resources */,
+				414686D42C01AD50005EFF3E /* ToDoItem.xib in Resources */,
 				414686C62C01A425005EFF3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41EB65F22C01B8D000CC7F0F /* Person.swift in Sources */,
 				414686C32C01A425005EFF3E /* ViewController.swift in Sources */,
 				414686BF2C01A425005EFF3E /* AppDelegate.swift in Sources */,
+				41EB66002C01E84D00CC7F0F /* DatabaseHelper.swift in Sources */,
+				414686D72C01ADFD005EFF3E /* ToDoItem.swift in Sources */,
+				41EB65F52C01B91E00CC7F0F /* ToDoViewModel.swift in Sources */,
 				414686C12C01A425005EFF3E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +393,26 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		41EB65FB2C01E72000CC7F0F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 10.24.2;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		41EB65FC2C01E72000CC7F0F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41EB65FB2C01E72000CC7F0F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 414686B32C01A425005EFF3E /* Project object */;
 }
